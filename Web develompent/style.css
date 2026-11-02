@@ -1,0 +1,225 @@
+/* Sugar Bakes Bakery - cleaned and responsive stylesheet */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #fffaf0;
+    color: #292929;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 { text-align: center; line-height: 1.25; }
+h1 { color: #173f8a; margin: 18px auto; }
+h2 { color: #173f8a; margin: 28px auto 18px; }
+h3 { color: #173f8a; margin: 24px auto 12px; }
+
+p { max-width: 900px; margin: 14px auto; }
+
+.logo-section {
+    width: 100%;
+    min-height: 150px;
+    padding: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.10);
+}
+
+.logo {
+    display: block;
+    width: 140px;
+    height: 140px;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.navigation-table,
+body > table {
+    width: min(100%, 1100px);
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.navigation-table th,
+body > table th,
+body > table td {
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.navigation-table th a,
+body > table th a,
+body > table td a {
+    display: block;
+    padding: 10px 8px;
+    border-radius: 8px;
+    color: #173f8a;
+    background: #f4f6ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.navigation-table th a:hover,
+.navigation-table th a.active,
+body > table th a:hover,
+body > table td a:hover {
+    background: #173f8a;
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Products page: each existing image group is a centred white box. */
+body > ul {
+    width: min(90%, 760px);
+    min-height: 190px;
+    margin: 12px auto 28px;
+    padding: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+    list-style: none;
+    background: #fff;
+    border: 2px solid #173f8a;
+    border-top: 4px solid #173f8a;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+body > ul img,
+.gallery-image {
+    display: block;
+    width: 200px;
+    height: 175px;
+    margin: 0;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.12);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+body > ul img:hover,
+.gallery-image:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,.18);
+}
+
+/* Product search field inserted by script.js */
+#productSearch {
+    display: block;
+    width: min(90%, 480px);
+    margin: 20px auto 28px;
+    padding: 13px 18px;
+    border: 2px solid #173f8a;
+    border-radius: 25px;
+    background: #fff;
+    font-size: 16px;
+}
+
+#productSearch:focus {
+    outline: 3px solid rgba(23,63,138,.18);
+}
+
+.contact-table {
+    width: min(90%, 700px);
+    margin: 25px auto;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.contact-table td {
+    padding: 14px;
+    border: 1px solid #d9d9d9;
+}
+
+.contact-table td:first-child { font-weight: bold; color: #173f8a; }
+
+form {
+    width: min(95%, 700px);
+    margin: 25px auto;
+}
+
+form table {
+    width: 100%;
+    background: #fff;
+    border-collapse: collapse;
+}
+
+form td { padding: 12px; }
+
+input, select, textarea, button {
+    max-width: 100%;
+    font: inherit;
+}
+
+input[type="text"], input[type="email"], input[type="tel"],
+input[type="date"], input[type="number"], textarea, select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #b9b9b9;
+    border-radius: 7px;
+    background: #fff;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: 2px solid #173f8a;
+    border-color: #173f8a;
+}
+
+input[type="submit"], input[type="reset"], button {
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 7px;
+    background: #173f8a;
+    color: #fff;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 35px;
+    padding: 18px;
+    background: #173f8a;
+    color: #fff;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    body { padding: 10px; }
+    .logo-section { flex-direction: column; gap: 8px; }
+    .navigation-table th { padding: 3px; }
+    .navigation-table th a { padding: 8px 3px; font-size: 12px; }
+    body > ul { width: 96%; padding: 15px; gap: 12px; }
+    body > ul img, .gallery-image { width: min(42vw, 200px); height: 155px; }
+    form td { display: block; width: 100%; }
+}
+
+@media (max-width: 420px) {
+    .navigation-table th a { font-size: 10px; }
+    body > ul img, .gallery-image { width: 100%; max-width: 230px; height: 170px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
